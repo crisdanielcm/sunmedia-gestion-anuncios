@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('component/all', 'ComponentController@index');
+Route::post('component/store', 'ComponentController@store');

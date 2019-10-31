@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class AdController extends Controller
 {
+
+    public function validator(array $data){
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +39,7 @@ class AdController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

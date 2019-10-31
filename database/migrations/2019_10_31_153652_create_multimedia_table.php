@@ -20,6 +20,7 @@ class CreateMultimediaTable extends Migration
             $table->double('weight', 5);
             $table->integer('type');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 
