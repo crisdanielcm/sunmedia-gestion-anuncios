@@ -15,7 +15,9 @@ class CreateAdComponentsTable extends Migration
     {
         Schema::create('ad_components', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->integer('ad_id')->unsigned();
+            $table->integer('component_id')->unsigned();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
