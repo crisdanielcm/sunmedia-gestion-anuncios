@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="401397b5-f509-46cb-bf9e-a4fe71188f10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Component.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Component.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ComponentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComponentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Text.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Text.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_30_212530_create_components_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_30_212530_create_components_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_30_212843_create_ad_components_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_30_212843_create_ad_components_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_30_214247_create_texts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_30_214247_create_texts_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ComponentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
+            <state relative-caret-position="2">
+              <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
               <folding>
                 <element signature="e#40#58#0#PHP" expanded="true" />
                 <element signature="e#1547#1934#1#PHP" />
@@ -34,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Component.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+            <state relative-caret-position="289">
+              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -89,8 +84,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_10_30_212843_create_ad_components_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_30_212530_create_components_table.php" />
         <option value="$PROJECT_DIR$/app/Text.php" />
-        <option value="$PROJECT_DIR$/app/Component.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ComponentController.php" />
+        <option value="$PROJECT_DIR$/app/Component.php" />
       </list>
     </option>
   </component>
@@ -282,7 +277,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49498000" />
+    <option name="totallyTimeSpent" value="52471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1432" y="-8" width="1456" height="876" extended-state="6" />
@@ -453,21 +448,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Component.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ComponentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
+        <state relative-caret-position="2">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
           <folding>
             <element signature="e#40#58#0#PHP" expanded="true" />
             <element signature="e#1547#1934#1#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Component.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>

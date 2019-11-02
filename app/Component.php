@@ -9,7 +9,7 @@ class Component extends Model
     protected $fillable = ['name','position_x','position_y','position_z','height','width'];
 
     public function multimedia(){
-        return $this->belongsTo(Multimedia::class, 'id');
+        return $this->belongsTo(Multimedia::class, 'multimedia_id');
     }
 
     public function text(){

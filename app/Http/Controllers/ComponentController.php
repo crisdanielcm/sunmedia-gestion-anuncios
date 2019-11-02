@@ -94,7 +94,7 @@ class ComponentController extends Controller
                 'type' => $type
             ]);
 
-            $component->text()->associate($type_component);
+            $component->multimedia()->associate($type_component);
             $component->save();
 
         }else{
