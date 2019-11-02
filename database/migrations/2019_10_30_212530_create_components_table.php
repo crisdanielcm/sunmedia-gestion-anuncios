@@ -15,8 +15,8 @@ class CreateComponentsTable extends Migration
     {
         Schema::create('components', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('multimedia_id');
-            $table->integer('text_id');
+            $table->integer('multimedia_id')->nullable();
+            $table->integer('text_id')->nullable();
             $table->string('name');
             $table->double('position_x');
             $table->double('position_y');
@@ -24,6 +24,7 @@ class CreateComponentsTable extends Migration
             $table->double('height');
             $table->double('width');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

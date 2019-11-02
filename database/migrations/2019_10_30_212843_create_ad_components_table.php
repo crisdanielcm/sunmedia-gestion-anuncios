@@ -18,6 +18,7 @@ class CreateAdComponentsTable extends Migration
             $table->integer('ad_id')->unsigned();
             $table->integer('component_id')->unsigned();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 
