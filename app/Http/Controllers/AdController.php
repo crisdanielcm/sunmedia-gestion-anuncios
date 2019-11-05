@@ -9,12 +9,12 @@ class AdController extends Controller
 {
 
     /**
-     * Store a newly created resource in storage.
-     * status 0 = published, status 1 = stopped, status 2 = publishing.
-     * @param  \Illuminate\Http\Request  $request
+     * Método que permite crear un anuncio.
+     * Estados de un anuncio: status 0 = published, status 1 = stopped, status 2 = publishing.
+     * @param Request $request
      * @return array
      */
-    public function store(Request $request)
+    public function createAd(Request $request)
     {
         $ad = Ad::create([
             'name' => $request->input('name'),
@@ -37,9 +37,10 @@ class AdController extends Controller
     }
 
     /**
+     * Método que permite publicar un anuncio si su estado es 1 = stopped
+     * Estados de un anuncio: status 0 = published, status 1 = stopped, status 2 = publishing.
      * @param Request $request
-     * * status 0 = published, status 1 = stopped, status 2 = publishing.
-     * @return array message
+     * @return array
      */
     public function postAd(Request $request){
 
@@ -47,7 +48,7 @@ class AdController extends Controller
 
         if (isset($ad)){
             if ($ad->status == 1){
-                $ad->status = '2';
+                $ad->status = 0;
                 $ad->save();
                 return array([
                     'message' => 'The ad has been published successfully.'

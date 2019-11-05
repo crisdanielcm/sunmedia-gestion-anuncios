@@ -12,9 +12,8 @@ class ComponentController extends Controller
 {
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  Request  $request
+     * Método que valida los campos propios de la tabla componentes
+     * @param Request $request
      * @return \Illuminate\Contracts\Validation\Validator
      */
     public function validatorComponent(Request $request){
@@ -28,9 +27,8 @@ class ComponentController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  Request  $request
+     * Método que valida los campos correspondientes a los componentes de tipo imagen y video
+     * @param Request $request
      * @return \Illuminate\Contracts\Validation\Validator
      */
     public function validatorMultimedia(Request $request)
@@ -44,9 +42,8 @@ class ComponentController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  Request  $request
+     * Método que valida los campos correspondientes a los componentes de tipo texto
+     * @param Request $request
      * @return \Illuminate\Contracts\Validation\Validator
      */
     public function validatorText(Request $request)
@@ -56,11 +53,9 @@ class ComponentController extends Controller
         ]);
     }
 
-
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Lista de componentes
+     * @return Component[]|\Illuminate\Database\Eloquent\Collection
      */
     public function index()
     {
@@ -68,12 +63,12 @@ class ComponentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     * type 0 = image, type 1 = video, type 2 = text
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
+     * Método que permite crear un componente bajo las condiciones especificadas.
+     * Tipos componentes: type 0 = image, type 1 = video, type 2 = text
+     * @param Request $request
+     * @return array|\Illuminate\Http\JsonResponse
      */
-    protected function store(Request $request)
+    public function createComponent(Request $request)
     {
         $type = $request->input('type');
         $type_component = "";
