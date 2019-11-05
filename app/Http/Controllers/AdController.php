@@ -7,79 +7,62 @@ use Illuminate\Http\Request;
 
 class AdController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Método que permite crear un anuncio.
+     * Estados de un anuncio: status 0 = published, status 1 = stopped, status 2 = publishing.
+     * @param Request $request
+     * @return array
      */
-    public function index()
+    public function createAd(Request $request)
     {
-        //
+        $ad = Ad::create([
+            'name' => $request->input('name'),
+            'status' => $request->input('status')
+        ]);
+
+        //Una vez creado el anuncio, adiciona los componetes seleccionados y los agrega a la tabla intermedia ad_components.
+        $ad->components()->attach($request->components);
+
+        if (isset($ad)){
+            return array([
+                'message' => 'The ad has been created successfully.'
+            ]);
+        }else{
+            return array([
+                'message' => 'An error has occurred, try again.'
+            ]);
+        }
+
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Método que permite publicar un anuncio si su estado es 1 = stopped
+     * Estados de un anuncio: status 0 = published, status 1 = stopped, status 2 = publishing.
+     * @param Request $request
+     * @return array
      */
-    public function create()
-    {
-        //
-    }
+    public function postAd(Request $request){
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $ad = Ad::find($request->ad_id);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Ad  $ad
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Ad $ad)
-    {
-        //
+        if (isset($ad)){
+            if ($ad->status == 1){
+                $ad->status = 0;
+                $ad->save();
+                return array([
+                    'message' => 'The ad has been published successfully.'
+                ]);
+            }else{
+                return array([
+                    'message' => 'You can only post ads in a stopped state.'
+                ]);
+            }
+        }else{
+            return array([
+                'message' => 'An error has occurred, try again.'
+            ]);
+        }
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Ad  $ad
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Ad $ad)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Ad  $ad
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Ad $ad)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Ad  $ad
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Ad $ad)
-    {
-        //
-    }
+    
 }

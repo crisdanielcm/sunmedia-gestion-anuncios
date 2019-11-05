@@ -16,10 +16,11 @@ class CreateMultimediaTable extends Migration
         Schema::create('multimedia', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->longText('link');
-            $table->char('format', 5);
-            $table->double('weight', 5);
+            $table->char('format', 10);
+            $table->double('weight');
             $table->integer('type');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

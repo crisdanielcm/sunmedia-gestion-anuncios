@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('component/all', 'ComponentController@index');
+
+Route::post('component/create', 'ComponentController@createComponent');
+
+Route::post('ad/create', 'AdController@createAd');
+
+Route::post('ad/post', 'AdController@postAd');
