@@ -11,9 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use App\Ad;
+
+Route::get('qwe', function () {
+    $ad = Ad::where('id', 1)
+        ->where('status', 1)
+        ->update(['status' => 2]);
+    return $ad;
 });
 
 Route::post('component/all', 'ComponentController@index');
+
 Route::post('component/store', 'ComponentController@store');
+
+Route::post('ad/store', 'AdController@store');
+
+Route::post('ad/post', 'AdController@postAd');

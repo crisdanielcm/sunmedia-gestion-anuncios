@@ -15,4 +15,8 @@ class Component extends Model
     public function text(){
         return $this->belongsTo(Text::class, 'text_id');
     }
+
+//    public function ads(){
+//        return $this->belongsToMany(Ad::class, 'ad_components');
+//    }
 }

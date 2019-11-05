@@ -17,12 +17,29 @@ class ComponentController extends Controller
      * @param  Request  $request
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    public function validatorComponent(Request $request){
+        return Validator::make($request->all(), [
+            'position_x' => 'numeric',
+            'position_y' => 'numeric',
+            'position_z' => 'numeric',
+            'height' => 'numeric',
+            'width' => 'numeric',
+        ]);
+    }
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
     public function validatorMultimedia(Request $request)
     {
         return Validator::make($request->all(), [
-            'link' => ['regex:~^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|png|MP4|WEBM)$~', 'required']
+            'link' => ['regex:~^https?://(?:[a-z0-9\-]+\.)+[a-z]{2,6}(?:/[^/#?]+)+\.(?:jpg|png|MP4|WEBM)$~', 'required'],
+            'weight' => ['numeric','required']
         ],[
-            'link.regex' => 'The link format is invalid. The formats allowed for video are MP4 and WEBM, and for JPG and PNG images.'
+            'link.regex' => 'The link format is invalid. The supported video formats are MP4 and WEBM; and the supported image formats are JPG and PNG.'
         ]);
     }
 
@@ -60,6 +77,11 @@ class ComponentController extends Controller
     {
         $type = $request->input('type');
         $type_component = "";
+
+        $validator = $this->validatorComponent($request);
+        if ($validator->fails()){
+            return response()->json($validator->errors(), 422);
+        }
 
         //Creación de las generalidades del componente
         $component = Component::create([
